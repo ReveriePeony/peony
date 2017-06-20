@@ -1,0 +1,727 @@
+[INFO] [2017-03-08 11:29:13][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+ [INFO] [2017-03-08 11:29:13][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@61dc03ce: startup date [Wed Mar 08 11:29:13 CST 2017]; root of context hierarchy
+ [WARN] [2017-03-08 11:29:13][org.mybatis.spring.mapper.ClassPathMapperScanner]No MyBatis mapper was found in '[com.dao]' package. Please check your configuration.
+ [INFO] [2017-03-08 11:29:13][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+ [INFO] [2017-03-08 11:29:13][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [ERROR] [2017-03-08 11:29:13][org.springframework.test.context.TestContextManager]Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@5e82df6a] to prepare test instance [com.peony.test.TestMyBatis@3f197a46]
+ java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:101)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:109)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:75)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:319)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:232)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:89)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:175)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:678)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'testService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [com.peony.dao.TestDAO] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:307)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:700)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:121)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:100)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:250)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContextInternal(CacheAwareContextLoaderDelegate.java:64)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:91)
+	... 25 more
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [com.peony.dao.TestDAO] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoSuchBeanDefinitionException(DefaultListableBeanFactory.java:1100)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:960)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:855)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:441)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:419)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:544)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:155)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:304)
+	... 41 more
+[INFO] [2017-03-08 11:33:01][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+ [INFO] [2017-03-08 11:33:01][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@61dc03ce: startup date [Wed Mar 08 11:33:01 CST 2017]; root of context hierarchy
+ [INFO] [2017-03-08 11:33:01][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+ [INFO] [2017-03-08 11:33:01][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO] [2017-03-08 11:33:11][com.peony.test.TestMyBatis]{submittime=2017-02-28 09:39:48, mealid=3, orderno=WSO20170228093948, price=2580.0, name=peonyIII, paystatus=0, tel=15013990984, id=32, paymenttime=, paytype=1}
+ [INFO] [2017-03-08 11:33:11][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@61dc03ce: startup date [Wed Mar 08 11:33:01 CST 2017]; root of context hierarchy
+ [INFO] [2017-03-11 16:06:15][com.peony.util.QrUtil]缩略图宽：83, 高：83
+ [INFO] [2017-03-11 16:06:15][com.peony.util.QrUtil]缩放比例1：0.7024096385542169， 缩放比例2：0.7024096385542169, 原生宽度：50， 原生高度：50
+ [INFO] [2017-03-11 16:06:15][com.peony.util.QrUtil]缩略图新的宽度：71, 新的高度：71
+ [INFO] [2017-03-11 16:06:45][com.peony.util.QrUtil]缩略图宽：50, 高：50
+ [INFO] [2017-03-11 16:06:45][com.peony.util.QrUtil]缩放比例1：1.1， 缩放比例2：1.1, 原生宽度：50， 原生高度：50
+ [INFO] [2017-03-11 16:06:45][com.peony.util.QrUtil]缩略图新的宽度：45, 新的高度：45
+ [INFO] [2017-03-11 16:07:03][com.peony.util.QrUtil]缩略图宽：500, 高：500
+ [INFO] [2017-03-11 16:07:03][com.peony.util.QrUtil]缩放比例1：0.2， 缩放比例2：0.2, 原生宽度：50， 原生高度：50
+ [INFO] [2017-03-11 16:07:03][com.peony.util.QrUtil]缩略图新的宽度：250, 新的高度：250
+ [INFO] [2017-03-11 16:07:22][com.peony.util.QrUtil]缩略图宽：100, 高：100
+ [INFO] [2017-03-11 16:07:22][com.peony.util.QrUtil]缩放比例1：0.6， 缩放比例2：0.6, 原生宽度：50， 原生高度：50
+ [INFO] [2017-03-11 16:07:22][com.peony.util.QrUtil]缩略图新的宽度：83, 新的高度：83
+ [INFO] [2017-03-11 16:07:50][com.peony.util.QrUtil]缩略图宽：200, 高：200
+ [INFO] [2017-03-11 16:07:50][com.peony.util.QrUtil]缩放比例1：0.35， 缩放比例2：0.35, 原生宽度：50， 原生高度：50
+ [INFO] [2017-03-11 16:07:50][com.peony.util.QrUtil]缩略图新的宽度：142, 新的高度：142
+ [INFO] [2017-03-11 16:10:18][com.peony.util.QrUtil]缩略图宽：60, 高：60
+ [INFO] [2017-03-11 16:10:18][com.peony.util.QrUtil]缩放比例1：0.9333333333333333， 缩放比例2：0.9333333333333333, 原生宽度：50， 原生高度：50
+ [INFO] [2017-03-11 16:10:18][com.peony.util.QrUtil]缩略图新的宽度：53, 新的高度：53
+ [INFO] [2017-03-11 16:10:59][com.peony.util.QrUtil]缩略图宽：60, 高：60
+ [INFO] [2017-03-11 16:10:59][com.peony.util.QrUtil]缩放比例1：0.9333333333333333， 缩放比例2：0.9333333333333333, 原生宽度：50， 原生高度：50
+ [INFO] [2017-03-11 16:10:59][com.peony.util.QrUtil]缩略图新的宽度：53, 新的高度：53
+ [INFO] [2017-03-11 16:11:29][com.peony.util.QrUtil]缩略图宽：60, 高：60
+ [INFO] [2017-03-11 16:11:29][com.peony.util.QrUtil]缩放比例1：0.9333333333333333， 缩放比例2：0.9333333333333333, 原生宽度：50， 原生高度：50
+ [INFO] [2017-03-11 16:11:29][com.peony.util.QrUtil]缩略图新的宽度：53, 新的高度：53
+ [INFO] [2017-04-10 16:20:13][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+ [INFO] [2017-04-10 16:20:13][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@59e84876: startup date [Mon Apr 10 16:20:13 CST 2017]; root of context hierarchy
+ [INFO] [2017-04-10 16:20:13][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+ [INFO] [2017-04-10 16:20:13][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO] [2017-04-10 16:20:15][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@59e84876: startup date [Mon Apr 10 16:20:13 CST 2017]; root of context hierarchy
+ [INFO] [2017-04-10 16:21:12][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+ [INFO] [2017-04-10 16:21:13][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@59e84876: startup date [Mon Apr 10 16:21:13 CST 2017]; root of context hierarchy
+ [INFO] [2017-04-10 16:21:13][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+ [INFO] [2017-04-10 16:21:13][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO] [2017-04-10 16:21:16][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@59e84876: startup date [Mon Apr 10 16:21:13 CST 2017]; root of context hierarchy
+ [INFO] [2017-04-10 16:23:08][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+ [INFO] [2017-04-10 16:23:08][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@59e84876: startup date [Mon Apr 10 16:23:08 CST 2017]; root of context hierarchy
+ [INFO] [2017-04-10 16:23:08][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+ [INFO] [2017-04-10 16:23:08][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO] [2017-04-10 16:23:10][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@59e84876: startup date [Mon Apr 10 16:23:08 CST 2017]; root of context hierarchy
+ [ERROR] [2017-04-10 17:19:48][com.peony.test.HttpsConnection]doGet REQUEST_RESPONSE_ERROR, URL = https://share.dmhy.org/topics/list
+ java.io.IOException: <!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Just a moment...</title>
+  <style type="text/css">
+    html, body {width: 100%; height: 100%; margin: 0; padding: 0;}
+    body {background-color: #ffffff; font-family: Helvetica, Arial, sans-serif; font-size: 100%;}
+    h1 {font-size: 1.5em; color: #404040; text-align: center;}
+    p {font-size: 1em; color: #404040; text-align: center; margin: 10px 0 0 0;}
+    #spinner {margin: 0 auto 30px auto; display: block;}
+    .attribution {margin-top: 20px;}
+    @-webkit-keyframes bubbles { 33%: { -webkit-transform: translateY(10px); transform: translateY(10px); } 66% { -webkit-transform: translateY(-10px); transform: translateY(-10px); } 100% { -webkit-transform: translateY(0); transform: translateY(0); } }
+    @keyframes bubbles { 33%: { -webkit-transform: translateY(10px); transform: translateY(10px); } 66% { -webkit-transform: translateY(-10px); transform: translateY(-10px); } 100% { -webkit-transform: translateY(0); transform: translateY(0); } }
+    .bubbles { background-color: #404040; width:15px; height: 15px; margin:2px; border-radius:100%; -webkit-animation:bubbles 0.6s 0.07s infinite ease-in-out; animation:bubbles 0.6s 0.07s infinite ease-in-out; -webkit-animation-fill-mode:both; animation-fill-mode:both; display:inline-block; }
+  </style>
+
+    <script type="text/javascript">
+  //<![CDATA[
+  (function(){
+    var a = function() {try{return !!window.addEventListener} catch(e) {return !1} },
+    b = function(b, c) {a() ? document.addEventListener("DOMContentLoaded", b, c) : document.attachEvent("onreadystatechange", b)};
+    b(function(){
+      var a = document.getElementById('cf-content');a.style.display = 'block';
+      setTimeout(function(){
+        var s,t,o,p,b,r,e,a,k,i,n,g,f, ptkSiXy={"yNnxXNN":!+[]+!![]+!![]+!![]+!![]+!![]+!![]};
+        t = document.createElement('div');
+        t.innerHTML="<a href='/'>x</a>";
+        t = t.firstChild.href;r = t.match(/https?:\/\//)[0];
+        t = t.substr(r.length); t = t.substr(0,t.length-1);
+        a = document.getElementById('jschl-answer');
+        f = document.getElementById('challenge-form');
+        ;ptkSiXy.yNnxXNN*=+((!+[]+!![]+[])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]));ptkSiXy.yNnxXNN+=+((!+[]+!![]+!![]+[])+(+!![]));a.value = parseInt(ptkSiXy.yNnxXNN, 10) + t.length; '; 121'
+        f.submit();
+      }, 4000);
+    }, false);
+  })();
+  //]]>
+</script>
+
+
+</head>
+<body>
+  <table width="100%" height="100%" cellpadding="20">
+    <tr>
+      <td align="center" valign="middle">
+          <div class="cf-browser-verification cf-im-under-attack">
+  <noscript><h1 data-translate="turn_on_js" style="color:#bd2426;">Please turn JavaScript on and reload the page.</h1></noscript>
+  <div id="cf-content" style="display:none">
+    <div>
+      <div class="bubbles"></div>
+      <div class="bubbles"></div>
+      <div class="bubbles"></div>
+    </div>
+    <h1><span data-translate="checking_browser">Checking your browser before accessing</span> dmhy.org.</h1>
+    <p data-translate="process_is_automatic">This process is automatic. Your browser will redirect to your requested content shortly.</p>
+    <p data-translate="allow_5_secs">Please allow up to 5 seconds&hellip;</p>
+  </div>
+  <form id="challenge-form" action="/cdn-cgi/l/chk_jschl" method="get">
+    <input type="hidden" name="jschl_vc" value="d634db2d0c9146344379997f3622717b"/>
+    <input type="hidden" name="pass" value="1491815929.648-hEZkjETYKG"/>
+    <input type="hidden" id="jschl-answer" name="jschl_answer"/>
+  </form>
+</div>
+
+
+          <div class="attribution">
+            <a href="https://www.cloudflare.com/5xx-error-landing?utm_source=iuam" target="_blank" style="font-size: 12px;">DDoS protection by Cloudflare</a>
+            <br>
+            Ray ID: 34d49edf485d11e3
+          </div>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+
+	at com.peony.test.HttpsConnection.getResponseAsString(HttpsConnection.java:189)
+	at com.peony.test.HttpsConnection.doGet(HttpsConnection.java:119)
+	at com.peony.controller.HttpController.main(HttpController.java:43)
+[ERROR] [2017-04-10 17:21:03][com.peony.test.HttpsConnection]doGet REQUEST_RESPONSE_ERROR, URL = https://share.dmhy.org/topics/list?keyword=%5B%E6%A1%9C%E9%83%BD%E5%AD%97%E5%B9%95%E7%BB%84%5D+%5BBang+Dream%21%5D
+ java.io.IOException: <!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Just a moment...</title>
+  <style type="text/css">
+    html, body {width: 100%; height: 100%; margin: 0; padding: 0;}
+    body {background-color: #ffffff; font-family: Helvetica, Arial, sans-serif; font-size: 100%;}
+    h1 {font-size: 1.5em; color: #404040; text-align: center;}
+    p {font-size: 1em; color: #404040; text-align: center; margin: 10px 0 0 0;}
+    #spinner {margin: 0 auto 30px auto; display: block;}
+    .attribution {margin-top: 20px;}
+    @-webkit-keyframes bubbles { 33%: { -webkit-transform: translateY(10px); transform: translateY(10px); } 66% { -webkit-transform: translateY(-10px); transform: translateY(-10px); } 100% { -webkit-transform: translateY(0); transform: translateY(0); } }
+    @keyframes bubbles { 33%: { -webkit-transform: translateY(10px); transform: translateY(10px); } 66% { -webkit-transform: translateY(-10px); transform: translateY(-10px); } 100% { -webkit-transform: translateY(0); transform: translateY(0); } }
+    .bubbles { background-color: #404040; width:15px; height: 15px; margin:2px; border-radius:100%; -webkit-animation:bubbles 0.6s 0.07s infinite ease-in-out; animation:bubbles 0.6s 0.07s infinite ease-in-out; -webkit-animation-fill-mode:both; animation-fill-mode:both; display:inline-block; }
+  </style>
+
+    <script type="text/javascript">
+  //<![CDATA[
+  (function(){
+    var a = function() {try{return !!window.addEventListener} catch(e) {return !1} },
+    b = function(b, c) {a() ? document.addEventListener("DOMContentLoaded", b, c) : document.attachEvent("onreadystatechange", b)};
+    b(function(){
+      var a = document.getElementById('cf-content');a.style.display = 'block';
+      setTimeout(function(){
+        var s,t,o,p,b,r,e,a,k,i,n,g,f, BEtQOqJ={"LMJE":+((!+[]+!![]+[])+(!+[]+!![]+!![]+!![]+!![]+!![]))};
+        t = document.createElement('div');
+        t.innerHTML="<a href='/'>x</a>";
+        t = t.firstChild.href;r = t.match(/https?:\/\//)[0];
+        t = t.substr(r.length); t = t.substr(0,t.length-1);
+        a = document.getElementById('jschl-answer');
+        f = document.getElementById('challenge-form');
+        ;BEtQOqJ.LMJE+=+((+!![]+[])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![]));BEtQOqJ.LMJE-=+((+!![]+[])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![]));BEtQOqJ.LMJE-=+((!+[]+!![]+!![]+[])+(!+[]+!![]));a.value = parseInt(BEtQOqJ.LMJE, 10) + t.length; '; 121'
+        f.submit();
+      }, 4000);
+    }, false);
+  })();
+  //]]>
+</script>
+
+
+</head>
+<body>
+  <table width="100%" height="100%" cellpadding="20">
+    <tr>
+      <td align="center" valign="middle">
+          <div class="cf-browser-verification cf-im-under-attack">
+  <noscript><h1 data-translate="turn_on_js" style="color:#bd2426;">Please turn JavaScript on and reload the page.</h1></noscript>
+  <div id="cf-content" style="display:none">
+    <div>
+      <div class="bubbles"></div>
+      <div class="bubbles"></div>
+      <div class="bubbles"></div>
+    </div>
+    <h1><span data-translate="checking_browser">Checking your browser before accessing</span> dmhy.org.</h1>
+    <p data-translate="process_is_automatic">This process is automatic. Your browser will redirect to your requested content shortly.</p>
+    <p data-translate="allow_5_secs">Please allow up to 5 seconds&hellip;</p>
+  </div>
+  <form id="challenge-form" action="/cdn-cgi/l/chk_jschl" method="get">
+    <input type="hidden" name="jschl_vc" value="8e3b28ae5984a8f29435e7c4b0b7df92"/>
+    <input type="hidden" name="pass" value="1491816005.968-O9zSYKHXOD"/>
+    <input type="hidden" id="jschl-answer" name="jschl_answer"/>
+  </form>
+</div>
+
+
+          <div class="attribution">
+            <a href="https://www.cloudflare.com/5xx-error-landing?utm_source=iuam" target="_blank" style="font-size: 12px;">DDoS protection by Cloudflare</a>
+            <br>
+            Ray ID: 34d4a0bc4e6878f2
+          </div>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+
+	at com.peony.test.HttpsConnection.getResponseAsString(HttpsConnection.java:189)
+	at com.peony.test.HttpsConnection.doGet(HttpsConnection.java:119)
+	at com.peony.controller.HttpController.main(HttpController.java:43)
+[ERROR] [2017-04-10 17:27:05][com.peony.test.HttpsConnection]doGet REQUEST_RESPONSE_ERROR, URL = https://share.dmhy.org/topics/list?keyword=%5B%E6%A1%9C%E9%83%BD%E5%AD%97%E5%B9%95%E7%BB%84%5D+%5BBang+Dream%21%5D
+ java.io.IOException: <!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Just a moment...</title>
+  <style type="text/css">
+    html, body {width: 100%; height: 100%; margin: 0; padding: 0;}
+    body {background-color: #ffffff; font-family: Helvetica, Arial, sans-serif; font-size: 100%;}
+    h1 {font-size: 1.5em; color: #404040; text-align: center;}
+    p {font-size: 1em; color: #404040; text-align: center; margin: 10px 0 0 0;}
+    #spinner {margin: 0 auto 30px auto; display: block;}
+    .attribution {margin-top: 20px;}
+    @-webkit-keyframes bubbles { 33%: { -webkit-transform: translateY(10px); transform: translateY(10px); } 66% { -webkit-transform: translateY(-10px); transform: translateY(-10px); } 100% { -webkit-transform: translateY(0); transform: translateY(0); } }
+    @keyframes bubbles { 33%: { -webkit-transform: translateY(10px); transform: translateY(10px); } 66% { -webkit-transform: translateY(-10px); transform: translateY(-10px); } 100% { -webkit-transform: translateY(0); transform: translateY(0); } }
+    .bubbles { background-color: #404040; width:15px; height: 15px; margin:2px; border-radius:100%; -webkit-animation:bubbles 0.6s 0.07s infinite ease-in-out; animation:bubbles 0.6s 0.07s infinite ease-in-out; -webkit-animation-fill-mode:both; animation-fill-mode:both; display:inline-block; }
+  </style>
+
+    <script type="text/javascript">
+  //<![CDATA[
+  (function(){
+    var a = function() {try{return !!window.addEventListener} catch(e) {return !1} },
+    b = function(b, c) {a() ? document.addEventListener("DOMContentLoaded", b, c) : document.attachEvent("onreadystatechange", b)};
+    b(function(){
+      var a = document.getElementById('cf-content');a.style.display = 'block';
+      setTimeout(function(){
+        var s,t,o,p,b,r,e,a,k,i,n,g,f, bniiaLS={"CnsUbWUJM":+((!+[]+!![]+!![]+[])+(+[]))};
+        t = document.createElement('div');
+        t.innerHTML="<a href='/'>x</a>";
+        t = t.firstChild.href;r = t.match(/https?:\/\//)[0];
+        t = t.substr(r.length); t = t.substr(0,t.length-1);
+        a = document.getElementById('jschl-answer');
+        f = document.getElementById('challenge-form');
+        ;bniiaLS.CnsUbWUJM+=+((!+[]+!![]+!![]+!![]+[])+(!+[]+!![]));bniiaLS.CnsUbWUJM-=!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![];bniiaLS.CnsUbWUJM-=!+[]+!![];bniiaLS.CnsUbWUJM-=!+[]+!![];bniiaLS.CnsUbWUJM-=+((+!![]+[])+(+!![]));bniiaLS.CnsUbWUJM+=+((!+[]+!![]+!![]+[])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]));bniiaLS.CnsUbWUJM-=+((!+[]+!![]+!![]+!![]+!![]+[])+(+[]));bniiaLS.CnsUbWUJM+=+((!+[]+!![]+!![]+!![]+!![]+[])+(+[]));bniiaLS.CnsUbWUJM-=+((!+[]+!![]+[])+(!+[]+!![]+!![]));a.value = parseInt(bniiaLS.CnsUbWUJM, 10) + t.length; '; 121'
+        f.submit();
+      }, 4000);
+    }, false);
+  })();
+  //]]>
+</script>
+
+
+</head>
+<body>
+  <table width="100%" height="100%" cellpadding="20">
+    <tr>
+      <td align="center" valign="middle">
+          <div class="cf-browser-verification cf-im-under-attack">
+  <noscript><h1 data-translate="turn_on_js" style="color:#bd2426;">Please turn JavaScript on and reload the page.</h1></noscript>
+  <div id="cf-content" style="display:none">
+    <div>
+      <div class="bubbles"></div>
+      <div class="bubbles"></div>
+      <div class="bubbles"></div>
+    </div>
+    <h1><span data-translate="checking_browser">Checking your browser before accessing</span> dmhy.org.</h1>
+    <p data-translate="process_is_automatic">This process is automatic. Your browser will redirect to your requested content shortly.</p>
+    <p data-translate="allow_5_secs">Please allow up to 5 seconds&hellip;</p>
+  </div>
+  <form id="challenge-form" action="/cdn-cgi/l/chk_jschl" method="get">
+    <input type="hidden" name="jschl_vc" value="7ccf1264e59f6ba6239539a41c50bfbe"/>
+    <input type="hidden" name="pass" value="1491816367.459-dro4Idd1Zv"/>
+    <input type="hidden" id="jschl-answer" name="jschl_answer"/>
+  </form>
+</div>
+
+
+          <div class="attribution">
+            <a href="https://www.cloudflare.com/5xx-error-landing?utm_source=iuam" target="_blank" style="font-size: 12px;">DDoS protection by Cloudflare</a>
+            <br>
+            Ray ID: 34d4a98f990c5152
+          </div>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+
+	at com.peony.test.HttpsConnection.getResponseAsString(HttpsConnection.java:189)
+	at com.peony.test.HttpsConnection.doGet(HttpsConnection.java:119)
+	at com.peony.controller.HttpController.main(HttpController.java:43)
+[ERROR] [2017-04-10 17:27:59][com.peony.test.HttpsConnection]doGet REQUEST_RESPONSE_ERROR, URL = https://share.dmhy.org/topics/list?keyword=%5B%E6%A1%9C%E9%83%BD%E5%AD%97%E5%B9%95%E7%BB%84%5D+%5BBang+Dream%21%5D
+ java.io.IOException: <!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Just a moment...</title>
+  <style type="text/css">
+    html, body {width: 100%; height: 100%; margin: 0; padding: 0;}
+    body {background-color: #ffffff; font-family: Helvetica, Arial, sans-serif; font-size: 100%;}
+    h1 {font-size: 1.5em; color: #404040; text-align: center;}
+    p {font-size: 1em; color: #404040; text-align: center; margin: 10px 0 0 0;}
+    #spinner {margin: 0 auto 30px auto; display: block;}
+    .attribution {margin-top: 20px;}
+    @-webkit-keyframes bubbles { 33%: { -webkit-transform: translateY(10px); transform: translateY(10px); } 66% { -webkit-transform: translateY(-10px); transform: translateY(-10px); } 100% { -webkit-transform: translateY(0); transform: translateY(0); } }
+    @keyframes bubbles { 33%: { -webkit-transform: translateY(10px); transform: translateY(10px); } 66% { -webkit-transform: translateY(-10px); transform: translateY(-10px); } 100% { -webkit-transform: translateY(0); transform: translateY(0); } }
+    .bubbles { background-color: #404040; width:15px; height: 15px; margin:2px; border-radius:100%; -webkit-animation:bubbles 0.6s 0.07s infinite ease-in-out; animation:bubbles 0.6s 0.07s infinite ease-in-out; -webkit-animation-fill-mode:both; animation-fill-mode:both; display:inline-block; }
+  </style>
+
+    <script type="text/javascript">
+  //<![CDATA[
+  (function(){
+    var a = function() {try{return !!window.addEventListener} catch(e) {return !1} },
+    b = function(b, c) {a() ? document.addEventListener("DOMContentLoaded", b, c) : document.attachEvent("onreadystatechange", b)};
+    b(function(){
+      var a = document.getElementById('cf-content');a.style.display = 'block';
+      setTimeout(function(){
+        var s,t,o,p,b,r,e,a,k,i,n,g,f, gTglSyE={"VHulCP":+((!+[]+!![]+!![]+[])+(+[]))};
+        t = document.createElement('div');
+        t.innerHTML="<a href='/'>x</a>";
+        t = t.firstChild.href;r = t.match(/https?:\/\//)[0];
+        t = t.substr(r.length); t = t.substr(0,t.length-1);
+        a = document.getElementById('jschl-answer');
+        f = document.getElementById('challenge-form');
+        ;gTglSyE.VHulCP*=+((!+[]+!![]+!![]+!![]+[])+(!+[]+!![]+!![]+!![]+!![]+!![]));gTglSyE.VHulCP+=+((+!![]+[])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![]));gTglSyE.VHulCP-=+((!+[]+!![]+!![]+!![]+[])+(+[]));gTglSyE.VHulCP*=+((!+[]+!![]+!![]+!![]+[])+(+!![]));gTglSyE.VHulCP-=+((+!![]+[])+(!+[]+!![]+!![]+!![]+!![]+!![]));a.value = parseInt(gTglSyE.VHulCP, 10) + t.length; '; 121'
+        f.submit();
+      }, 4000);
+    }, false);
+  })();
+  //]]>
+</script>
+
+
+</head>
+<body>
+  <table width="100%" height="100%" cellpadding="20">
+    <tr>
+      <td align="center" valign="middle">
+          <div class="cf-browser-verification cf-im-under-attack">
+  <noscript><h1 data-translate="turn_on_js" style="color:#bd2426;">Please turn JavaScript on and reload the page.</h1></noscript>
+  <div id="cf-content" style="display:none">
+    <div>
+      <div class="bubbles"></div>
+      <div class="bubbles"></div>
+      <div class="bubbles"></div>
+    </div>
+    <h1><span data-translate="checking_browser">Checking your browser before accessing</span> dmhy.org.</h1>
+    <p data-translate="process_is_automatic">This process is automatic. Your browser will redirect to your requested content shortly.</p>
+    <p data-translate="allow_5_secs">Please allow up to 5 seconds&hellip;</p>
+  </div>
+  <form id="challenge-form" action="/cdn-cgi/l/chk_jschl" method="get">
+    <input type="hidden" name="jschl_vc" value="62066512c6f9b83bff26310ba99244ab"/>
+    <input type="hidden" name="pass" value="1491816422.166-ubYDGT3iDk"/>
+    <input type="hidden" id="jschl-answer" name="jschl_answer"/>
+  </form>
+</div>
+
+
+          <div class="attribution">
+            <a href="https://www.cloudflare.com/5xx-error-landing?utm_source=iuam" target="_blank" style="font-size: 12px;">DDoS protection by Cloudflare</a>
+            <br>
+            Ray ID: 34d4aae58c4b5152
+          </div>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+
+	at com.peony.test.HttpsConnection.getResponseAsString(HttpsConnection.java:189)
+	at com.peony.test.HttpsConnection.doGet(HttpsConnection.java:119)
+	at com.peony.controller.HttpController.main(HttpController.java:43)
+[ERROR] [2017-04-10 17:29:04][com.peony.test.HttpsConnection]doGet REQUEST_RESPONSE_ERROR, URL = https://share.dmhy.org/topics/list?keyword=Bang
+ java.io.IOException: <!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Just a moment...</title>
+  <style type="text/css">
+    html, body {width: 100%; height: 100%; margin: 0; padding: 0;}
+    body {background-color: #ffffff; font-family: Helvetica, Arial, sans-serif; font-size: 100%;}
+    h1 {font-size: 1.5em; color: #404040; text-align: center;}
+    p {font-size: 1em; color: #404040; text-align: center; margin: 10px 0 0 0;}
+    #spinner {margin: 0 auto 30px auto; display: block;}
+    .attribution {margin-top: 20px;}
+    @-webkit-keyframes bubbles { 33%: { -webkit-transform: translateY(10px); transform: translateY(10px); } 66% { -webkit-transform: translateY(-10px); transform: translateY(-10px); } 100% { -webkit-transform: translateY(0); transform: translateY(0); } }
+    @keyframes bubbles { 33%: { -webkit-transform: translateY(10px); transform: translateY(10px); } 66% { -webkit-transform: translateY(-10px); transform: translateY(-10px); } 100% { -webkit-transform: translateY(0); transform: translateY(0); } }
+    .bubbles { background-color: #404040; width:15px; height: 15px; margin:2px; border-radius:100%; -webkit-animation:bubbles 0.6s 0.07s infinite ease-in-out; animation:bubbles 0.6s 0.07s infinite ease-in-out; -webkit-animation-fill-mode:both; animation-fill-mode:both; display:inline-block; }
+  </style>
+
+    <script type="text/javascript">
+  //<![CDATA[
+  (function(){
+    var a = function() {try{return !!window.addEventListener} catch(e) {return !1} },
+    b = function(b, c) {a() ? document.addEventListener("DOMContentLoaded", b, c) : document.attachEvent("onreadystatechange", b)};
+    b(function(){
+      var a = document.getElementById('cf-content');a.style.display = 'block';
+      setTimeout(function(){
+        var s,t,o,p,b,r,e,a,k,i,n,g,f, wGaTVks={"pmNT":+((!+[]+!![]+[])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![]))};
+        t = document.createElement('div');
+        t.innerHTML="<a href='/'>x</a>";
+        t = t.firstChild.href;r = t.match(/https?:\/\//)[0];
+        t = t.substr(r.length); t = t.substr(0,t.length-1);
+        a = document.getElementById('jschl-answer');
+        f = document.getElementById('challenge-form');
+        ;wGaTVks.pmNT*=+((!+[]+!![]+[])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]));wGaTVks.pmNT+=+((!+[]+!![]+!![]+!![]+[])+(!+[]+!![]));wGaTVks.pmNT*=+((+!![]+[])+(!+[]+!![]+!![]+!![]));wGaTVks.pmNT-=+((!+[]+!![]+!![]+[])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![]));a.value = parseInt(wGaTVks.pmNT, 10) + t.length; '; 121'
+        f.submit();
+      }, 4000);
+    }, false);
+  })();
+  //]]>
+</script>
+
+
+</head>
+<body>
+  <table width="100%" height="100%" cellpadding="20">
+    <tr>
+      <td align="center" valign="middle">
+          <div class="cf-browser-verification cf-im-under-attack">
+  <noscript><h1 data-translate="turn_on_js" style="color:#bd2426;">Please turn JavaScript on and reload the page.</h1></noscript>
+  <div id="cf-content" style="display:none">
+    <div>
+      <div class="bubbles"></div>
+      <div class="bubbles"></div>
+      <div class="bubbles"></div>
+    </div>
+    <h1><span data-translate="checking_browser">Checking your browser before accessing</span> dmhy.org.</h1>
+    <p data-translate="process_is_automatic">This process is automatic. Your browser will redirect to your requested content shortly.</p>
+    <p data-translate="allow_5_secs">Please allow up to 5 seconds&hellip;</p>
+  </div>
+  <form id="challenge-form" action="/cdn-cgi/l/chk_jschl" method="get">
+    <input type="hidden" name="jschl_vc" value="3f31d880ee5d66439d2d6cbf8aaf9709"/>
+    <input type="hidden" name="pass" value="1491816486.569-WSph2SaqiI"/>
+    <input type="hidden" id="jschl-answer" name="jschl_answer"/>
+  </form>
+</div>
+
+
+          <div class="attribution">
+            <a href="https://www.cloudflare.com/5xx-error-landing?utm_source=iuam" target="_blank" style="font-size: 12px;">DDoS protection by Cloudflare</a>
+            <br>
+            Ray ID: 34d4ac780ea178f2
+          </div>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+
+	at com.peony.test.HttpsConnection.getResponseAsString(HttpsConnection.java:189)
+	at com.peony.test.HttpsConnection.doGet(HttpsConnection.java:119)
+	at com.peony.controller.HttpController.main(HttpController.java:43)
+[ERROR] [2017-04-10 17:29:29][com.peony.test.HttpsConnection]doGet REQUEST_RESPONSE_ERROR, URL = https://share.dmhy.org/topics/list
+ java.io.IOException: <!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Just a moment...</title>
+  <style type="text/css">
+    html, body {width: 100%; height: 100%; margin: 0; padding: 0;}
+    body {background-color: #ffffff; font-family: Helvetica, Arial, sans-serif; font-size: 100%;}
+    h1 {font-size: 1.5em; color: #404040; text-align: center;}
+    p {font-size: 1em; color: #404040; text-align: center; margin: 10px 0 0 0;}
+    #spinner {margin: 0 auto 30px auto; display: block;}
+    .attribution {margin-top: 20px;}
+    @-webkit-keyframes bubbles { 33%: { -webkit-transform: translateY(10px); transform: translateY(10px); } 66% { -webkit-transform: translateY(-10px); transform: translateY(-10px); } 100% { -webkit-transform: translateY(0); transform: translateY(0); } }
+    @keyframes bubbles { 33%: { -webkit-transform: translateY(10px); transform: translateY(10px); } 66% { -webkit-transform: translateY(-10px); transform: translateY(-10px); } 100% { -webkit-transform: translateY(0); transform: translateY(0); } }
+    .bubbles { background-color: #404040; width:15px; height: 15px; margin:2px; border-radius:100%; -webkit-animation:bubbles 0.6s 0.07s infinite ease-in-out; animation:bubbles 0.6s 0.07s infinite ease-in-out; -webkit-animation-fill-mode:both; animation-fill-mode:both; display:inline-block; }
+  </style>
+
+    <script type="text/javascript">
+  //<![CDATA[
+  (function(){
+    var a = function() {try{return !!window.addEventListener} catch(e) {return !1} },
+    b = function(b, c) {a() ? document.addEventListener("DOMContentLoaded", b, c) : document.attachEvent("onreadystatechange", b)};
+    b(function(){
+      var a = document.getElementById('cf-content');a.style.display = 'block';
+      setTimeout(function(){
+        var s,t,o,p,b,r,e,a,k,i,n,g,f, XECFtsx={"WGhK":+((!+[]+!![]+!![]+[])+(!+[]+!![]+!![]+!![]))};
+        t = document.createElement('div');
+        t.innerHTML="<a href='/'>x</a>";
+        t = t.firstChild.href;r = t.match(/https?:\/\//)[0];
+        t = t.substr(r.length); t = t.substr(0,t.length-1);
+        a = document.getElementById('jschl-answer');
+        f = document.getElementById('challenge-form');
+        ;XECFtsx.WGhK+=+((!+[]+!![]+!![]+!![]+[])+(!+[]+!![]));XECFtsx.WGhK*=+((!+[]+!![]+[])+(!+[]+!![]+!![]+!![]+!![]));XECFtsx.WGhK*=+((!+[]+!![]+!![]+[])+(!+[]+!![]+!![]+!![]+!![]+!![]));XECFtsx.WGhK*=+((+!![]+[])+(!+[]+!![]+!![]));XECFtsx.WGhK+=+((!+[]+!![]+!![]+[])+(!+[]+!![]+!![]+!![]));XECFtsx.WGhK*=+((!+[]+!![]+[])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]));XECFtsx.WGhK*=+((!+[]+!![]+[])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]));XECFtsx.WGhK*=+((+!![]+[])+(+!![]));XECFtsx.WGhK+=+((!+[]+!![]+!![]+[])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]));a.value = parseInt(XECFtsx.WGhK, 10) + t.length; '; 121'
+        f.submit();
+      }, 4000);
+    }, false);
+  })();
+  //]]>
+</script>
+
+
+</head>
+<body>
+  <table width="100%" height="100%" cellpadding="20">
+    <tr>
+      <td align="center" valign="middle">
+          <div class="cf-browser-verification cf-im-under-attack">
+  <noscript><h1 data-translate="turn_on_js" style="color:#bd2426;">Please turn JavaScript on and reload the page.</h1></noscript>
+  <div id="cf-content" style="display:none">
+    <div>
+      <div class="bubbles"></div>
+      <div class="bubbles"></div>
+      <div class="bubbles"></div>
+    </div>
+    <h1><span data-translate="checking_browser">Checking your browser before accessing</span> dmhy.org.</h1>
+    <p data-translate="process_is_automatic">This process is automatic. Your browser will redirect to your requested content shortly.</p>
+    <p data-translate="allow_5_secs">Please allow up to 5 seconds&hellip;</p>
+  </div>
+  <form id="challenge-form" action="/cdn-cgi/l/chk_jschl" method="get">
+    <input type="hidden" name="jschl_vc" value="ecdde5c36028f8a6f8cafb8c0fd9e318"/>
+    <input type="hidden" name="pass" value="1491816511.828-2Eh1UWE7St"/>
+    <input type="hidden" id="jschl-answer" name="jschl_answer"/>
+  </form>
+</div>
+
+
+          <div class="attribution">
+            <a href="https://www.cloudflare.com/5xx-error-landing?utm_source=iuam" target="_blank" style="font-size: 12px;">DDoS protection by Cloudflare</a>
+            <br>
+            Ray ID: 34d4ad15e8c76d7e
+          </div>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+
+	at com.peony.test.HttpsConnection.getResponseAsString(HttpsConnection.java:189)
+	at com.peony.test.HttpsConnection.doGet(HttpsConnection.java:119)
+	at com.peony.controller.HttpController.main(HttpController.java:43)
+[ERROR] [2017-04-10 17:33:45][com.peony.test.HttpsConnection]doGet REQUEST_RESPONSE_ERROR, URL = https://share.dmhy.org/
+ java.io.IOException: <!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Just a moment...</title>
+  <style type="text/css">
+    html, body {width: 100%; height: 100%; margin: 0; padding: 0;}
+    body {background-color: #ffffff; font-family: Helvetica, Arial, sans-serif; font-size: 100%;}
+    h1 {font-size: 1.5em; color: #404040; text-align: center;}
+    p {font-size: 1em; color: #404040; text-align: center; margin: 10px 0 0 0;}
+    #spinner {margin: 0 auto 30px auto; display: block;}
+    .attribution {margin-top: 20px;}
+    @-webkit-keyframes bubbles { 33%: { -webkit-transform: translateY(10px); transform: translateY(10px); } 66% { -webkit-transform: translateY(-10px); transform: translateY(-10px); } 100% { -webkit-transform: translateY(0); transform: translateY(0); } }
+    @keyframes bubbles { 33%: { -webkit-transform: translateY(10px); transform: translateY(10px); } 66% { -webkit-transform: translateY(-10px); transform: translateY(-10px); } 100% { -webkit-transform: translateY(0); transform: translateY(0); } }
+    .bubbles { background-color: #404040; width:15px; height: 15px; margin:2px; border-radius:100%; -webkit-animation:bubbles 0.6s 0.07s infinite ease-in-out; animation:bubbles 0.6s 0.07s infinite ease-in-out; -webkit-animation-fill-mode:both; animation-fill-mode:both; display:inline-block; }
+  </style>
+
+    <script type="text/javascript">
+  //<![CDATA[
+  (function(){
+    var a = function() {try{return !!window.addEventListener} catch(e) {return !1} },
+    b = function(b, c) {a() ? document.addEventListener("DOMContentLoaded", b, c) : document.attachEvent("onreadystatechange", b)};
+    b(function(){
+      var a = document.getElementById('cf-content');a.style.display = 'block';
+      setTimeout(function(){
+        var s,t,o,p,b,r,e,a,k,i,n,g,f, KIFAoHD={"XXmuDMdoVrf":+((!+[]+!![]+!![]+[])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]))};
+        t = document.createElement('div');
+        t.innerHTML="<a href='/'>x</a>";
+        t = t.firstChild.href;r = t.match(/https?:\/\//)[0];
+        t = t.substr(r.length); t = t.substr(0,t.length-1);
+        a = document.getElementById('jschl-answer');
+        f = document.getElementById('challenge-form');
+        ;KIFAoHD.XXmuDMdoVrf-=+((!+[]+!![]+[])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]));KIFAoHD.XXmuDMdoVrf-=+((+!![]+[])+(!+[]+!![]+!![]+!![]+!![]));KIFAoHD.XXmuDMdoVrf*=+((!+[]+!![]+!![]+[])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![]));KIFAoHD.XXmuDMdoVrf+=+((!+[]+!![]+[])+(!+[]+!![]+!![]));KIFAoHD.XXmuDMdoVrf*=+((!+[]+!![]+!![]+!![]+[])+(!+[]+!![]+!![]+!![]+!![]));KIFAoHD.XXmuDMdoVrf-=+((!+[]+!![]+!![]+!![]+!![]+[])+(+[]));KIFAoHD.XXmuDMdoVrf-=+((!+[]+!![]+[])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]));a.value = parseInt(KIFAoHD.XXmuDMdoVrf, 10) + t.length; '; 121'
+        f.submit();
+      }, 4000);
+    }, false);
+  })();
+  //]]>
+</script>
+
+
+</head>
+<body>
+  <table width="100%" height="100%" cellpadding="20">
+    <tr>
+      <td align="center" valign="middle">
+          <div class="cf-browser-verification cf-im-under-attack">
+  <noscript><h1 data-translate="turn_on_js" style="color:#bd2426;">Please turn JavaScript on and reload the page.</h1></noscript>
+  <div id="cf-content" style="display:none">
+    <div>
+      <div class="bubbles"></div>
+      <div class="bubbles"></div>
+      <div class="bubbles"></div>
+    </div>
+    <h1><span data-translate="checking_browser">Checking your browser before accessing</span> dmhy.org.</h1>
+    <p data-translate="process_is_automatic">This process is automatic. Your browser will redirect to your requested content shortly.</p>
+    <p data-translate="allow_5_secs">Please allow up to 5 seconds&hellip;</p>
+  </div>
+  <form id="challenge-form" action="/cdn-cgi/l/chk_jschl" method="get">
+    <input type="hidden" name="jschl_vc" value="ee3f3e83e56cac949e4dfcec4838af1a"/>
+    <input type="hidden" name="pass" value="1491816767.489-ouEQzEd/M2"/>
+    <input type="hidden" id="jschl-answer" name="jschl_answer"/>
+  </form>
+</div>
+
+
+          <div class="attribution">
+            <a href="https://www.cloudflare.com/5xx-error-landing?utm_source=iuam" target="_blank" style="font-size: 12px;">DDoS protection by Cloudflare</a>
+            <br>
+            Ray ID: 34d4b353cad76dd2
+          </div>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+
+	at com.peony.test.HttpsConnection.getResponseAsString(HttpsConnection.java:189)
+	at com.peony.test.HttpsConnection.doGet(HttpsConnection.java:119)
+	at com.peony.controller.HttpController.main(HttpController.java:43)
+[ERROR] [2017-04-11 09:58:37][com.peony.test.HttpsConnection]doGet REQUEST_RESPONSE_ERROR, URL = http://tieba.baidu.com/f?kw=%E6%88%98%E6%96%97%E5%B0%91%E5%A5%B3%E9%AB%98%E6%A0%A1&fr=home&fp=0&ie=utf-8
+ java.net.ProtocolException: Server redirected too many  times (20)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:1890)
+	at sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:1885)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.net.www.protocol.http.HttpURLConnection.getChainedException(HttpURLConnection.java:1884)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1457)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1441)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:254)
+	at com.peony.test.HttpsConnection.getResponseAsString(HttpsConnection.java:183)
+	at com.peony.test.HttpsConnection.doGet(HttpsConnection.java:119)
+	at com.peony.controller.HttpController.main(HttpController.java:43)
+Caused by: java.net.ProtocolException: Server redirected too many  times (20)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1848)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1441)
+	at sun.net.www.protocol.http.HttpURLConnection.getHeaderField(HttpURLConnection.java:2943)
+	at java.net.URLConnection.getContentType(URLConnection.java:512)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getContentType(HttpsURLConnectionImpl.java:406)
+	at com.peony.test.HttpsConnection.getResponseAsString(HttpsConnection.java:180)
+	... 2 more
